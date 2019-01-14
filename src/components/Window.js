@@ -16,7 +16,7 @@ class Window extends Component {
    */
   styleAttributes() {
     const { window } = this.props;
-    return { width: `${window.xywh[2]}px`, height: `${window.xywh[3]}px` };
+    return {}; // { width: `${window.xywh[2]}px`, height: `${window.xywh[3]}px` };
   }
 
   /**
