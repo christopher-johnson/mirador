@@ -38,11 +38,11 @@ export class WindowTopBar extends Component {
     return (
       <AppBar position="absolute">
         <Toolbar className={ns('window-top-bar')}>
-          <Typography variant="h6" noWrap color="inherit" className={classes.grow}>
+          <Typography variant="h3" noWrap color="inherit" className={classes.grow}>
             {this.titleContent()}
           </Typography>
           <ConnectedWindowTopBarButtons windowId={windowId} />
-          <Button color="inherit" aria-label="Close Window" onClick={() => removeWindow(windowId)}>&times;</Button>
+          <Button color="inherit" className={ns('window-close')} aria-label="Close Window" onClick={() => removeWindow(windowId)}>&times;</Button>
         </Toolbar>
       </AppBar>
     );

@@ -91,6 +91,7 @@ class WorkspaceControlPanel extends Component {
         <List>
           <Fab
             color="primary"
+            id="addBtn"
             aria-label="Add"
             className={classes.fab}
             aria-owns={anchorEl ? 'add-form' : undefined}

@@ -3,13 +3,17 @@ describe('Window actions', () => {
     await page.goto('http://127.0.0.1:4488/__tests__/integration/mirador/');
   });
   it('opens a window and closes it', async () => {
+    await expect(page).toClick('#addBtn');
     await expect(page).toFill('#manifestURL', 'http://localhost:5000/api/sn904cj3439');
     await expect(page).toClick('#fetchBtn');
     // TODO: Refactor the app so we get rid of the wait
     await page.waitFor(1000);
     await expect(page).toClick('li button');
+    console.log(page.content());
     await expect(page).toMatchElement('.mirador-window');
+    await expect(page).toClick('.mirador-window');
     await expect(page).toClick('.mirador-window-close');
     await expect(page).not.toMatchElement('.mirador-window');
+    await page.waitFor(1000);
   });
 });
